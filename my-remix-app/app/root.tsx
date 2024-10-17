@@ -7,7 +7,7 @@ import "./tailwind.css";
 
 export function links() {
   return [
-    // Your links here
+   
   ];
 }
 
@@ -24,7 +24,8 @@ export default function App() {
         <Footer />
         <ScrollRestoration />
         <Scripts />
-       <LiveReload />  
+        <LiveReload />
+    
       </body>
     </html>
   );

@@ -64,9 +64,10 @@ export default function NavBar() {
           <div className="hidden sm:ml-6 sm:block">
             <Menu as="div" className="relative">
               <div>
-                <MenuButton className="inline-flex justify-center rounded-full p-2 hover:bg-purple-700 focus:outline-none">
+                <MenuButton className="inline-flex justify-center rounded-full p-2 hover:bg-gray-700 focus:outline-none">
                   <div className=" rounded-full p-1">
-                    <BellIcon className="h-5 w-5 text-purple-500" aria-hidden="true" />
+                    
+                    <CogIcon className="h-9 w-9 mr-2 text-purple-700" aria-hidden="true" />
                   </div>
                 </MenuButton>
               </div>
@@ -78,7 +79,7 @@ export default function NavBar() {
                 </MenuItem>
                 <MenuItem>
                   <Link to="/settings" className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                    <CogIcon className="h-5 w-5 mr-2" aria-hidden="true" /> Settings
+                  <BellIcon className="h-5 w-5 text-purple-500" aria-hidden="true" /> Notifications
                   </Link>
                 </MenuItem>
                 <MenuItem>
