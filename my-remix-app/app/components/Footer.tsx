@@ -1,41 +1,61 @@
+import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faYoutube, faWhatsapp, faInstagram, faFacebook, faTiktok } from '@fortawesome/free-brands-svg-icons';
+import { faYoutube, faWhatsapp, faInstagram, faFacebook, faTiktok, faAppStore, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
 
 export default function Footer() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
-    <footer className="py-4 mt-10 bg-black">
+    <footer className="text-white py-6 px-4">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-        {/* First section */}
-        <div className="flex items-center text-white hover:text-yellow-400 transition-colors duration-300">
-          <p className="text-xl font-bold">Join With Us.</p>
+        <div className="flex items-center text-white hover:text-yellow-400">
+          {isMounted && (
+            <>
+              <FontAwesomeIcon icon={faAppStore} size="xl" className="px-3" />
+              <FontAwesomeIcon icon={faGooglePlay} size="xl" className="px-3" />
+            </>
+          )}
         </div>
 
-        {/* Copyright Notice */}
+        <nav className="flex flex-wrap justify-center md:justify-start text-white">
+          <a href="#" className="px-2 hover:text-yellow-400">T & C</a>
+          <a href="#" className="px-2 hover:text-yellow-400">Privacy Policy</a>
+          <a href="#" className="px-2 hover:text-yellow-400">Contact Us</a>
+          <a href="#" className="px-2 hover:text-yellow-400">Careers</a>
+        </nav>
+
         <div className="text-center font-bold mt-4 md:mt-0 text-yellow-400">
           <p className="text-sm">
-             Copyright 2024 - Taprobana Cab Service.<br />
-            All rights reserved - Realisation: HACKTIVIST<br />
+            &copy; Copyright 2024 - Apple Doctor.<br/>
+            All rights reserved - Realisation: "HACKTIVIST"<br/>
             Using this website means you accept our terms and conditions.
           </p>
         </div>
 
-        {/* Social Media Links */}
         <div className="flex mt-4 md:mt-0 text-white">
-          <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our YouTube channel" className='mx-2 hover:text-yellow-400 transition-colors duration-300'>
-            <FontAwesomeIcon icon={faYoutube} size="2x" />
-          </a>
-          <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp" className='mx-2 hover:text-yellow-400 transition-colors duration-300'>
-            <FontAwesomeIcon icon={faWhatsapp} size="2x" />
-          </a>
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" className='mx-2 hover:text-yellow-400 transition-colors duration-300'>
-            <FontAwesomeIcon icon={faInstagram} size="2x" />
-          </a>
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Like us on Facebook" className='mx-2 hover:text-yellow-400 transition-colors duration-300'>
-            <FontAwesomeIcon icon={faFacebook} size="2x" />
-          </a>
-          <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on TikTok" className='mx-2 hover:text-yellow-400 transition-colors duration-300'>
-            <FontAwesomeIcon icon={faTiktok} size="2x" />
-          </a>
+          {isMounted && (
+            <>
+              <a href="#" className="mx-2 hover:text-yellow-400">
+                <FontAwesomeIcon icon={faYoutube} size="xl" />
+              </a>
+              <a href="#" className="mx-2 hover:text-yellow-400">
+                <FontAwesomeIcon icon={faWhatsapp} size="xl" />
+              </a>
+              <a href="#" className="mx-2 hover:text-yellow-400">
+                <FontAwesomeIcon icon={faInstagram} size="xl" />
+              </a>
+              <a href="#" className="mx-2 hover:text-yellow-400">
+                <FontAwesomeIcon icon={faFacebook} size="xl" />
+              </a>
+              <a href="#" className="mx-2 hover:text-yellow-400">
+                <FontAwesomeIcon icon={faTiktok} size="xl" />
+              </a>
+            </>
+          )}
         </div>
       </div>
     </footer>
