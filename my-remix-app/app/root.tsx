@@ -1,14 +1,17 @@
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
-import { LiveReload } from '@remix-run/react'; // Correct import for LiveReload
+import { LiveReload } from '@remix-run/react';
 import NavBar from "~/components/NavBar";
 import Footer from "~/components/Footer";
-import "./tailwind.css"; 
-import {NextUIProvider} from "@nextui-org/react";
-export function links() {
-  return [
-   
-  ];
-}
+import { NextUIProvider } from "@nextui-org/react";
+
+// Import TailwindCSS
+import styles from "./tailwind.css"; // Correct import for TailwindCSS styles
+
+// Define the links for TailwindCSS and any additional styles
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: styles }, // TailwindCSS styles
+  ...(typeof cssBundleHref !== "undefined" ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
+];
 
 export default function App() {
   return (
@@ -18,13 +21,13 @@ export default function App() {
         <Links />
       </head>
       <body>
-      <NextUIProvider>
-        <NavBar />
-        <Outlet />
-        <Footer />
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
+        <NextUIProvider>
+          <NavBar />
+          <Outlet />
+          <Footer />
+          <ScrollRestoration />
+          <Scripts />
+          <LiveReload />
         </NextUIProvider>
       </body>
     </html>

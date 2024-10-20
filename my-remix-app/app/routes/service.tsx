@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useRef, ReactNode } from "react";
 import { useInView } from "framer-motion";
 import { Button } from "@nextui-org/react";
@@ -37,7 +38,7 @@ export default function Service() {
     <div className="mx-auto pt-10">
       {/* First Section */}
       <Section>
-        <main className="container mx-auto pt-40 bg-[url('/images/service.jpg')] bg-cover bg-center bg-no-repeat h-screen flex items-center justify-center bg-fixed -z-10">
+        <main className="container mx-auto pt-40 bg-[url('/images/service.jpg')] bg-cover bg-center bg-no-repeat h-full w-full flex items-center justify-center bg-fixed -z-10">
           <div className="bg-black bg-opacity-70 rounded-lg text-white p-10 ">
             <p className="text-center text-3xl font-bold mb-6">
               Our Apple Accessories Repair Services Include

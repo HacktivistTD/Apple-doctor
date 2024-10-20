@@ -38,9 +38,7 @@ export default function HomePage() {
         <span className="box-decoration-clone bg-gradient-to-r from-indigo-600 to-pink-500 text-black text-2xl font-bold p-4 rounded-lg inline-block">
           Meet Your Doctor
         </span>
-        <p className="mt-4 text-white text-xl line-clamp-3 lg:line-clamp-none text-center">
-          Our experts are here to provide top-tier Apple repair services, ensuring your devices get the care they need.
-        </p>
+       
       </section>
     </main>
   );
