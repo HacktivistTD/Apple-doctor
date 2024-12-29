@@ -1,9 +1,8 @@
-// app/routes/index.tsx
+import { useEffect, useState } from "react";
 import React from 'react';
 import LatestItem from '~/components/LatestItem';
 import Product from '~/components/Product';
-import RotateBox from '~/components/RotateBox';
-import { motion } from 'framer-motion'; // Add this if RotateBox uses motion
+
 
 export default function HomePage() {
   return (
@@ -28,18 +27,10 @@ export default function HomePage() {
 
       {/* RotateBox Section */}
       <section className="mt-10">
-        <RotateBox />
+        <Product />
       </section>
 
 
-
-      {/* Meet Your Doctor Section */}
-      <section className="mt-10 text-center">
-        <span className="box-decoration-clone bg-gradient-to-r from-indigo-600 to-pink-500 text-black text-2xl font-bold p-4 rounded-lg inline-block">
-          Meet Your Doctor
-        </span>
-       
-      </section>
     </main>
   );
 }
